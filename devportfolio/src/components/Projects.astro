@@ -28,7 +28,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 
                 const Component = isClickable ? "a" : "div";
                 const linkProps = hasInternal
-                  ? { href: `/projects/${project.slug}` }
+                  ? { href: `${import.meta.env.BASE_URL}projects/${project.slug}` }
                   : hasExternal
                   ? { href: project.link, target: "_blank", rel: "noopener noreferrer" }
                   : {};
