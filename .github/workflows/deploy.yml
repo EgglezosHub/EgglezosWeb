@@ -17,17 +17,21 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./devportfolio   # 👈 run all npm commands inside devportfolio
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: ./devportfolio/package-lock.json
       - run: npm ci
-      - run: npm run build   # builds to ./dist (your scripts already have "build": "astro build")
+      - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./devportfolio/dist        # 👈 upload the built Astro site
 
   deploy:
     environment:
