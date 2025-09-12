@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://EgglezosHub.github.io/EgglezosWeb/",
+  site: "https://egglezoshub.github.io/EgglezosWeb/",
   base: "/EgglezosWeb/",
   vite: { plugins: [tailwindcss()] },
 });
