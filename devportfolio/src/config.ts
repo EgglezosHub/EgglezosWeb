@@ -13,6 +13,40 @@ export const siteConfig = {
     "I am Dimitris Egglezos, a software engineer pursuing a B.S. & Integrated M.S. in Informatics and Computer Engineering at the University of West Attica (expected October 2027). My experience covers backend systems, distributed computing, full-stack development, and applied AI, with projects ranging from Java RMI and MPI applications to scalable web platforms, messaging systems, and AI-based solvers. I focus on building efficient, reliable solutions while continuously advancing my expertise in parallel computing, artificial intelligence, and modern software technologies.",
   skills: ["AI / ML", "Full-Stack Development", "Java", "Python", "C++", "C"],
   projects: [
+      {
+      slug: "myelectra-smart-energy",
+      name: "MyElectra — Smart Energy Family App (Hackathon Winner)",
+      description:
+        "Real-time energy-trading dashboard where households monitor usage/production, compute surplus, and buy/sell electricity via a simple marketplace.",
+      dateRange: "Nov 2025",
+      skills: ["FastAPI", "JavaScript", "SQL", "System Design", "Data Visualization"],
+      tech: ["Python", "FastAPI", "SQLAlchemy", "SQLite/PostgreSQL", "Chart.js", "Docker"],
+      highlights: [
+        "🏆 Winner — DIEM 2025 (Smart Energy track).",
+        "Role: Backend & System Design — led API design, data model, and time-series logic.",
+        "12-hour rolling charts for usage, production, and surplus with efficient window queries.",
+        "Marketplace for offers (buy/sell kWh), account balances, and per-user history.",
+        "Clean separation of concerns: FastAPI backend (REST/JSON) + lightweight JS/Chart.js frontend."
+      ],
+      performance: [
+        "Time-windowed queries (12h) keep charts responsive without reloading entire histories.",
+        "Surplus is derived per user from production–usage streams; rolling storage avoids unbounded growth.",
+        "Wallet/connect flows were simulated for demo clarity; business logic remains backend-driven for reliability.",
+        "Dockerized local dev; simple `.sh` runner to start backend (Uvicorn) and static frontend server."
+      ],
+      challenges: [
+        "Keeping per-user streams independent while aggregating cleanly for surplus and marketplace views.",
+        "Ensuring charts stay fixed to a 12h horizon when switching users (no drifting timestamps).",
+        "Avoiding write-contention on balance/offer updates; structured endpoints with idempotent updates."
+      ],
+      images: [
+        "/images/MyElectra1.png",
+        "/images/MyElectra2.png",
+        "/images/MyElectra3.png"
+      ],
+      repo: "https://github.com/skevisvagelis769/HACKATHON-DIEM-2025",
+      link: "https://github.com/skevisvagelis769/HACKATHON-DIEM-2025" // or a live demo URL if you deploy it
+    },
     {
       slug: "wine-not",
       name: "Wine Not (Full-Stack E-Commerce App)",
